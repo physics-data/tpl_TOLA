@@ -1,5 +1,5 @@
 .PHONY: all
-all: signal.h5
+all: signal.h5 wave.png spectrum.png
 
 waves.h5: sources.csv stations.csv bandwidth.csv speed_of_light.csv sample.csv
 	python3 oscillation.py $^ $@
