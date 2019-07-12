@@ -15,3 +15,8 @@ spectrum.png: waves.h5 data/sample.csv
 
 signal.h5: waves.h5 offset.csv
 	python3 superimpose.py $^ $@
+
+# Delete partial files when the processes are killed.
+.DELETE_ON_ERROR:
+# Keep intermediate files around
+.SECONDARY:
