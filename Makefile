@@ -13,7 +13,10 @@ wave.png: waves.h5 data/sample.csv
 spectrum.png: waves.h5 data/sample.csv
 	python3 plot_wave_spectrum.py $^ $@
 
-signal.h5: waves.h5 offset.csv
+ideal_signal.h5: waves.h5 data/sources.csv data/stations.csv data/speed_of_light.csv data/sample.csv
+	python3 superposition.py $^ $@
+
+signal.h5: ideal_signal.h5 offset.csv
 	python3 superimpose.py $^ $@
 
 # Delete partial files when the processes are killed.
