@@ -1,7 +1,7 @@
 .PHONY: all
 all: signal.h5 wave.png spectrum.png
 
-waves.h5: data/sources.csv data/bandwidth.csv data/sample.csv
+waves.h5: data/sources.csv data/stations.csv data/speed_of_light.csv data/bandwidth.csv data/sample.csv
 	python3 oscillation.py $^ $@
 
 offset.csv: data/ostrength.csv
